@@ -14,14 +14,4 @@ describe('Teste o componente <FavoritePokemons.js />', () => {
     expect(favorites).toBeInTheDocument();
     expect(noFavorites).toBeInTheDocument();
   });
-
-  // it('Verifica se o componente possui favoritos', () => {
-  //   renderWithRouter(<FavoritePokemons />);
-
-  //   const favorites = screen.getByRole('heading', { name: /Favorite pokémons/i });
-  //   const noFavorites = screen.getByText(/No favorite pokemon found/i);
-
-  //   expect(favorites).toBeInTheDocument();
-  //   expect(noFavorites).not.toBeInTheDocument();
-  // });
 });
