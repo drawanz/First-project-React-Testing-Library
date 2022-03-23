@@ -6,9 +6,11 @@ import renderWithRouter from './helpers/renderWithRouter';
 import App from '../App';
 
 describe('Testes do App.js', () => {
-  it('Verifica se o conjunto de links de navegação existe', () => {
+  beforeEach(() => {
     renderWithRouter(<App />);
+  });
 
+  it('Verifica se o conjunto de links de navegação existe', () => {
     const linkHome = screen.getByRole('link', { name: /home/i });
     const linkAbout = screen.getByRole('link', { name: /about/i });
     const linkFavoritePokemons = screen.getByRole('link', { name: /favorite pokémons/i });
@@ -19,8 +21,6 @@ describe('Testes do App.js', () => {
   });
 
   it('Ao clicar em home, deve ser redirecionado para a página inicial', () => {
-    renderWithRouter(<App />);
-
     const linkHome = screen.getByRole('link', { name: /home/i });
     expect(linkHome).toBeInTheDocument();
 
@@ -32,8 +32,6 @@ describe('Testes do App.js', () => {
   });
 
   it('Ao clicar em about, deve ser redirecionado para a página about', () => {
-    renderWithRouter(<App />);
-
     const linkAbout = screen.getByRole('link', { name: /about/i });
     expect(linkAbout).toBeInTheDocument();
 
@@ -45,8 +43,6 @@ describe('Testes do App.js', () => {
 
   it(`Ao clicar em favorite pokémons, dele ser redirecionado para a página 
     favorite pokémons`, () => {
-    renderWithRouter(<App />);
-
     const linkFavoritePokemons = screen.getByRole('link', { name: /favorite pokémons/i });
     expect(linkFavoritePokemons).toBeInTheDocument();
 
