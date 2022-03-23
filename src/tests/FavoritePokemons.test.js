@@ -1,10 +1,9 @@
-// test('', () => {});
 import { screen } from '@testing-library/react';
 import React from 'react';
 import renderWithRouter from './helpers/renderWithRouter';
 import FavoritePokemons from '../components/FavoritePokemons';
 
-describe('Teste o componente <FavoritePokemons.js />', () => {
+describe('Verifica o componente <FavoritePokemons.js />', () => {
   it('Verifica se o componente está vazio', () => {
     renderWithRouter(<FavoritePokemons />);
 

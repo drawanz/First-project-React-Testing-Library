@@ -1,4 +1,3 @@
-// test('', () => {});
 import { screen } from '@testing-library/react';
 import React from 'react';
 import userEvent from '@testing-library/user-event';
@@ -11,13 +10,13 @@ describe('Testes do Pokedex.js', () => {
     renderWithRouter(<App />);
   });
 
-  it('Teste se página contém um heading h2 com o texto Encountered pokémons', () => {
+  it('Verifica se página contém um heading h2 com o texto Encountered pokémons', () => {
     const heading = screen.getByRole('heading', { name: /Encountered pokémons/i });
 
     expect(heading).toBeInTheDocument();
   });
 
-  it(`Teste se é exibido o próximo Pokémon da lista quando o botão Próximo 
+  it(`Verifica se é exibido o próximo Pokémon da lista quando o botão Próximo 
     pokémon é clicado.`, () => {
     pokemons.forEach(({ name }, index) => {
       const buttonNext = screen.getByRole('button', { name: /próximo pokémon/i });
@@ -34,13 +33,13 @@ describe('Testes do Pokedex.js', () => {
     });
   });
 
-  it('Teste se é mostrado apenas um Pokémon por vez.', () => {
+  it('Verifica se é mostrado apenas um Pokémon por vez.', () => {
     const img = screen.getAllByRole('img');
 
     expect(img).toHaveLength(1);
   });
 
-  it('Teste se a Pokédex tem os botões de filtro.', () => {
+  it('Verifica se a Pokédex tem os botões de filtro.', () => {
     pokemons.forEach(({ type }) => {
       const buttonAll = screen.getByRole('button', { name: /all/i });
       const buttonFilter = screen.getByRole('button', { name: type });

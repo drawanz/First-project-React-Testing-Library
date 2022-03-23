@@ -1,4 +1,3 @@
-// test('', () => {});
 import { screen } from '@testing-library/react';
 import React from 'react';
 import userEvent from '@testing-library/user-event';
@@ -53,7 +52,7 @@ describe('Testes do App.js', () => {
     expect(encounteredPokemons).toBeInTheDocument();
   });
 
-  it('Testa o redirecionamento para NotFound', () => {
+  it('Verifica o redirecionamento para NotFound', () => {
     const { history } = renderWithRouter(<App />);
 
     history.push('/abc');

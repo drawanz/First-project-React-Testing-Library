@@ -1,4 +1,3 @@
-// test('', () => {});
 import { screen } from '@testing-library/react';
 import React from 'react';
 import userEvent from '@testing-library/user-event';
@@ -6,12 +5,8 @@ import renderWithRouter from './helpers/renderWithRouter';
 import App from '../App';
 import pokemons from '../data';
 
-describe('', () => {
-  beforeEach(() => {
-
-  });
-
-  it('Teste se é renderizado um card com o nome de determinado pokémon', () => {
+describe('Testa Pokemon Details', () => {
+  it('Verifica se é renderizado um card com o nome de determinado pokémon', () => {
     const { history } = renderWithRouter(<App />);
     const moreDetails = screen.getByRole('link', { name: /more details/i });
     history.push({ pathname: `/pokemons/${pokemons[0].id}` });
@@ -26,7 +21,7 @@ describe('', () => {
     expect(resume).toBeInTheDocument();
   });
 
-  it('Teste se existe na página mapas contendo as localizações do pokémon', () => {
+  it('Verifica se existe na página mapas contendo as localizações do pokémon', () => {
     const { history } = renderWithRouter(<App />);
     history.push({ pathname: `/pokemons/${pokemons[0].id}` });
 
@@ -45,7 +40,8 @@ describe('', () => {
     expect(textSecondLocation).toBeInTheDocument();
   });
 
-  it('Teste se o usuário pode favoritar um pokémon através da página de detalhes', () => {
+  it(`Verifica se o usuário pode favoritar um pokémon através da página de 
+    detalhes`, () => {
     const { history } = renderWithRouter(<App />);
     history.push({ pathname: `/pokemons/${pokemons[0].id}` });
     const checkbox = screen.getByText(/pokémon favoritado\?/i);
