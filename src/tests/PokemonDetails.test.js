@@ -46,6 +46,17 @@ describe('', () => {
   });
 
   it('Teste se o usuário pode favoritar um pokémon através da página de detalhes', () => {
-    
+    const { history } = renderWithRouter(<App />);
+    history.push({ pathname: `/pokemons/${pokemons[0].id}` });
+    const checkbox = screen.getByText(/pokémon favoritado\?/i);
+
+    expect(checkbox).toBeInTheDocument();
+    userEvent.click(checkbox);
+
+    const favorite = screen.getByRole('img', { name: /pikachu is marked as favorite/i });
+    expect(favorite).toBeInTheDocument();
+    userEvent.click(checkbox);
+
+    expect(favorite).not.toBeInTheDocument();
   });
 });
