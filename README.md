@@ -8,7 +8,7 @@
 
 -- Simulating events with the RTL;
 
--- Test of asyc flow;
+-- Test of async flow;
 
 -- Creating mocks for the tests;
 
