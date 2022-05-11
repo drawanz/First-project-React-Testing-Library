@@ -1,6 +1,6 @@
 ### First project using React Testing Librady (RTL)
 
--- In this project I was responsible for developing the tests for the aplication.
+-- In this project I was responsible for developing the tests for the application.
 
 # Skills
 
